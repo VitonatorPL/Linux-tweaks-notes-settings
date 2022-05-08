@@ -1,0 +1,55 @@
+First - create csv file with directory content:
+
+Since your example file names don't have any double quotes or commas in them, the solution is quite simple:
+
+$ 'ls' > files.csv
+There are a couple of subtleties here:
+
+You want to quote the ls command in case you have an alias that adds flags to it that affect the output, such as -F, which appends file type sigils, or -C, which forces multi-column output. Such aliases are quite common on modern Unix and Unix-like systems.
+
+When ls is writing to a pipeline instead of a terminal, it prints one file name per line instead of the multi-column output you show in your question. POSIX requires single-column output in this case, and GNU and BSD ls obey.
+
+This CSV file won't have a header line, but Excel can cope with that; not all CSV readers can.
+
+But What If There Are Special Characters?
+Double quotes and commas are special characters in CSV files, so if you try the above command on a directory containing files named using such characters, you won't get a valid CSV file.
+
+It's not too difficult to cope with these cases.
+
+First let's take the case of files that may only have commas in them. This is going to be a much more common case since double quotes have meaning in Unix command shells, so there is a strong disincentive to using them in file names:
+
+$ 'ls' | sed -e 's/^/"/' -e 's/$/"/' > files.csv
+These sed string replacement commands put double quotes at the beginning and end of each line, which prevents a CSV reader from treating commas as field separators.
+
+Another way to achieve the same end is perl -ne 'chomp ; print "\"$_\"\n"'
+
+If you really do have double-quotes in your file names, the sed solution extends naturally:
+
+$ 'ls' | sed -e 's/"/\\"/g' -e 's/^/"/' -e 's/$/"/' > files.csv
+That is to say, we escape any existing double-quote characters before wrapping the line in semantic quotes.
+
+Some CSV readers handle double-quote escaping differently, treating two double-quote characters in a row as a literal double-quote:
+
+$ 'ls' | sed -e 's/"/""/g' -e 's/^/"/' -e 's/$/"/' > files.csv
+
+
+
+
+
+
+Next - remane:
+
+sed 's/"//g' files.csv | while IFS=, read orig new; do mv "$orig" "$new"; done 
+Explanation:
+
+sed 's/"//g' files.csv : remove the quotes
+IFS=, : split the input on ,
+while read orig new; do ... done : This will read each input line, split it on the value of $IFS (here a comma) and save the 1st field as $orig and the rest as $new.
+mv "$orig" "$new" : this will rename the files as requested.
+If your file only contains file names (like orig.jpg) and no paths (not /home/take2/orig.jpg or similar), the command above will only affect files in your current directory. So, you need to open a terminal, cd to the target directory and run it there.
+
+Test first:
+
+To test this, you can do a dry run first by printing the commands that will be run without actually executing them:
+
+sed 's/"//g' files.csv | while IFS=, read orig new; do echo mv "$orig" "$new"; done 
