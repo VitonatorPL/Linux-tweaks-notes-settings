@@ -1,0 +1,54 @@
+Bluetooth Quick Connect by bjarosze
+Allow to connect to paired devices from gnome control panel.
+
+Clipboard Indicator by Tudmotu
+Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the top panel, and caches clipboard history.
+
+Cosmic Dock
+Rozszerzenie systemowe
+A dock for the Gnome Shell, default Pop!_OS experience. This extension is a modified version of Dash To Dock with different defaults. Dash To Dock can be installed to replace it and give more (but unsupported) configuration options.
+
+Cosmic Workspaces
+Rozszerzenie systemowe
+Bringing back vertically stacked workspaces
+
+Desktop Icons NG (DING) by rastersoft
+Rozszerzenie systemowe
+Adds icons to the desktop. Fork of the original Desktop Icons extension, with several enhancements .
+
+Freon by UshakovVasilii
+Shows CPU temperature, disk temperature, video card temperature (NVIDIA/Catalyst/Bumblebee&NVIDIA), voltage and fan RPM (forked from xtranophilist/gnome-shell-extension-sensors)
+
+Fullscreen Avoider by Noobsai
+Moves the top panel to the secondary monitor if the primary is in fullscreen
+
+GSConnect by dlandau
+GSConnect is a complete implementation of KDE Connect especially for GNOME Shell with Nautilus, Chrome and Firefox integration. It does not rely on the KDE Connect desktop application and will not work with it installed.
+
+Lock Keys by kazimieras.vaina
+Numlock & Capslock status on the panel. Gnome version 3.30 and earlier users please install 44 version of the extension https://extensions.gnome.org/download-extension/lockkeys%40vaina.lt.shell-extension.zip?version_tag=26229
+
+OpenWeather by skrewball
+Display weather information for any location on Earth in the GNOME Shell
+
+Pop COSMIC
+Rozszerzenie systemowe
+Computer Operating System Main Interface Components
+
+Pop Shell
+Rozszerzenie systemowe
+Pop Shell
+
+Screenshot Tool by oal
+Conveniently create, copy, store and upload screenshots. Please log out and log in again after updating.
+
+System76 Power
+Rozszerzenie systemowe
+System76 Power Management
+
+Ubuntu AppIndicators by didrocks
+Rozszerzenie systemowe
+This a mock extension. It does nothing if installed from extensions.gnome.org. Please use KStatusNotifierItem/AppIndicator Support which provides the same functionalities. This name is used to protect and reserve the name for ubuntu appindicator, available as a system extension on ubuntu. This allow us to not trump updates outside of our QA process via an external upload.
+
+Vitals by corecoding
+A glimpse into your computer's temperature, voltage, fan speed, memory usage, processor load, system resources, network speed and storage stats. This is a one stop shop to monitor all of your vital sensors. Uses asynchronous polling to provide a smooth user experience. Feature requests or bugs? Please use GitHub.
