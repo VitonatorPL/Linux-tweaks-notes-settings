@@ -1,0 +1,5 @@
+When kernel updates, sometimes my RGB keyboard backlight cannot be set with F3/F4 buttons, the commands below will solve this.
+
+echo 0 | sudo tee /sys/class/leds/asus::kbd_backlight/brightness
+echo 1 | sudo tee /sys/class/leds/asus::kbd_backlight/brightness
+echo 2 | sudo tee /sys/class/leds/asus::kbd_backlight/brightness
