@@ -1,4 +1,4 @@
-First - create csv file with directory content:
+#First - create csv file with directory content:
 
 Since your example file names don't have any double quotes or commas in them, the solution is quite simple:
 
