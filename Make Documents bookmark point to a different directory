@@ -1,0 +1,48 @@
+1. 
+Make Documents bookmark point to a different directory
+Go to your home directory, and if you can't see any hidden directories (like .config) press Ctrl + h to show them (and again to hide them once more when done)
+Go into .config and open user-dirs.dirs (any text editor will do, by default will open in gedit)
+Find the line XDG_DOCUMENTS_DIR="$HOME/Documents"
+Change this to the directory you wish, if within home still just replace the /Documents part with the path from home, in your case you will want something more like XDG_DOCUMENTS_DIR="/mount/win_share_name/" if it is permanently mounted there (see https://wiki.ubuntu.com/MountWindowsSharesPermanently for more detail on doing this)
+Save the file and close it, your documents location will change next time you log in
+HINT: If you easily want to copy the path of your target directory, just go into it and use Ctrl + l to show the path in the top bar where you can select and copy it.
+
+Create link to the new Documents directory in Home
+Once you log out and back in, you will have a documents directory in your home directory that will be doing nothing, so you can delete it (if you have been using it before making this change, make sure you copy everything to the new location). However, you may instead want a Documents directory (technically a “symbolic link”) in Home that points to the new location.
+
+Preparation for creating the link: In some versions of Ubuntu, you may have to enable the option to show Create Link in the right-click menu (see the next section for instructions).
+
+Create the symbolic link (or “symlink”):
+
+Go to the directory you want to use as documents, right click on the directory, choose copy
+Go to your home directory, right click (in empty space, not on an item) and choose Create Link
+Create Link context menu
+
+You should now have Documents set up correctly in the side menu, etc., and have a link to the new Documents directory in your home directory.
+
+Enable “Show action to create symbolic links”
+By default in Ubuntu 20.04, Create Link will not show up in the right-click menu. To enable it, click on the 3 bar logo at the top right of the file manager (Nautilus) and choose Preferences.
+
+Choose Preferences
+
+Go to the Behaviour tab and tick the option of Show action to create symbolic link. You should now see create link in the context (right click) menu when a directory has been copied (it will not show up if, for instance, you copy some text and then right-click inside a window of the file manager).
+
+Select option to show in menu
+
+
+
+
+
+
+2.
+On 18.04 and later, open /home/[user]/.config/gtk-3.0/bookmarks in a text editor, locate the line that says
+
+file:///home/testuser/Documents
+and change that to
+
+smb://server1/share_name Documents
+If you don't see a directory .config in the user's directory it's because items starting with a . are hidden by default. In the file dialog, press Ctrl + h to see hidden items.
+
+Make a backup of the file first, of course.
+
+The user may need to log out and back in before this works.
