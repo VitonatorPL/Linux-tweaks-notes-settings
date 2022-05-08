@@ -1,3 +1,6 @@
+apt-mark showmanual |egrep -v 'linux-' > manual.lst
+
+
 amd-ppt-bin
 autoconf
 base-passwd
