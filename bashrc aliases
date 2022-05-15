@@ -1,0 +1,6 @@
+neofetch
+#  aliases
+alias i="sudo apt install"
+alias ytmp3="youtube-dl --extract-audio --audio-format mp3"
+alias u="sudo apt remove"
+alias upd="sudo apt update"
