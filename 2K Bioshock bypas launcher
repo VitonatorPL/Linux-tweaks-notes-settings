@@ -1,0 +1,25 @@
+How to bypass the 2K Launcher on Bioshock Remasters on Linux
+guide
+Go to the 2KLauncher folder on the game directory and delete its contents. Then, on a terminal enter this command:
+
+
+
+# Bioshock 1
+ln -s ../Build/Final/BioshockHD.exe LauncherPatcher.exe
+
+# Bioshock 2
+ln -s ../Build/Final/Bioshock2HD.exe LauncherPatcher.exe
+
+
+
+# Bioshock 1
+
+bash -c 'exec "${@/2KLauncher\/LauncherPatcher.exe/Build\/Final\/BioshockHD.exe}"' -- %command% -nointro
+
+# Bioshock 2
+
+bash -c 'exec "${@/2KLauncher\/LauncherPatcher.exe/Build\/Final\/Bioshock2HD.exe}"' -- %command% -nointro
+
+# Bioshock Infinite
+
+bash -c 'exec "${@/2KLauncher\/LauncherPatcher.exe/Binaries\/Win32\/BioShockInfinite.exe}"' -- %command%
