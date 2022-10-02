@@ -1,6 +1,7 @@
 sudo apt update               - aktualizuje repozytoria
 sudo apt upgrade              - aktualizuje aplikacje deb
 flatpak update                - aktualizuje flatpaki
+flatpak uninstall --unused    - usówa zbędne nieużywane paczki flatpak
 xkill                         - zamyka wybrane okno
 sudo apt autoremove           - kasuje niepotrzebne nieużywane aplikacje deb
 sudo apt install <nazwa apki> - instalacja aplikacji deb
@@ -9,3 +10,6 @@ sudo apt install <nazwa apki> - instalacja aplikacji deb
   sudo apt install steam      - :-)
   sudo apt install heroic     - launcher dla GOG i Epic
   sudo apt install lutris     - launcher GOG, Origin, Steam, Amazon Prime, Uplay, Retroarch itd.
+  sudo apt install neofetch   - informacje o systemie
+
+nvidia-smi                    - użycie GPU (nvidia)
