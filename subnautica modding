@@ -1,0 +1,16 @@
+Modding Subnautica & Subnautica: Below Zero is very much possible and can be achieved with very little work! follow the instructions below on how to properly setup a modded environment.
+
+Installing QMods on Linux with Proton:
+- Right click on Subnautica, select Manage then Browse local files
+- Manually download the ZIP archive of QModManager from here: https://www.nexusmods.com/subnautica/mods/201?tab=files
+- Extract the files directly to the folder opened in step 1 - if you've done it correctly you should see a file called winhttp.dll
+- Right click on Subnautica in your library, select Properties and add this to the launch options:
+WINEDLLOVERRIDES='winhttp.dll=n,b' %command%
+ -Now you should have a QMods folder in your Subnautica folder. Simply put your mods in that folder and they will load to the game!
+ 
+ 
+Troubleshooting:
+If there's no QMods folder in your Subnautica root folder after installing QModManager, create a folder named QMods manually yourself.
+Most mods require SMLHelper to work. Make sure to install it as well and pay attention to the dependencies of any mod you're installing.
+Ensure you are using the latest version of Subnautica or Below Zero. Modding experimental builds is unreliable and often very buggy, make sure to mod the stable build of the games instead.
+Credits to @szszoke for writing this simple version of the required instructions.
