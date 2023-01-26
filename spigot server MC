@@ -1,0 +1,17 @@
+instalacja JAVA 17,18,19 -    sudo apt-get install git openjdk-19-jre-headless
+Sprawdzamy którą mamy jave -  java -version
+                              sudo update-alternatives --config java
+
+tworzymy folder w HOME -      mkdir Spigot_Server && cd Spigot_Server
+Ściągamy BuildTools -         https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+przenosimy do Spigot_Server
+uruchamiamy -                 git config --global --unset core.autocrlf
+                              java -jar BuildTools.jar
+tworzymy start.sh 
+
+#!/bin/sh
+
+java -Xms1G -Xmx1G -jar spigot.jar
+
+robimy jako wykonywalny -   chmod +x start.sh
+
