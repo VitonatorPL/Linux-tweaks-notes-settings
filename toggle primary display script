@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+import subprocess
+
+# Look up the currently set primary screen, set it to the other one
+scr_data = subprocess.check_output(["xrandr"]).decode("utf-8").splitlines()
+scrs = [[l.split()[0], "primary" in l] for l in scr_data if " connected" in l]
+for screen in scrs:
+    if not screen[1]:
+        subprocess.Popen(["xrandr", "--output", screen[0], "--primary"])
+
+
+// It toggles (switches between the two) the primary screen.
+
+//To use:
+//copy the script into an empty file, save it as toggle_primary.py
+
+//Add it to a shortcut key: choose: System Settings > "Keyboard" > "Shortcuts" > "Custom Shortcuts". Click the "+" and add the command:
+
+  python3 /path/to/toggle_primary.py
