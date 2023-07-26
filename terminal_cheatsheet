@@ -8,7 +8,7 @@ sudo apt install <nazwa apki> - instalacja aplikacji deb
   sudo apt install htop       - monitor zasobów
   sudo apt install cmatrix    - wygaszacz ekranu a'la matrix
   sudo apt install steam      - :-)
-  sudo apt install heroic     - launcher dla GOG i Epic
+  sudo apt install heroic     - launcher dla GOG/Epic/Amazon
   sudo apt install lutris     - launcher GOG, Origin, Steam, Amazon Prime, Uplay, Retroarch itd.
   sudo apt install neofetch   - informacje o systemie
 
