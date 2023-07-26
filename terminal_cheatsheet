@@ -14,3 +14,4 @@ sudo apt install <nazwa apki> - instalacja aplikacji deb
 
 nvidia-smi                    - użycie GPU (nvidia)
 df -h                         - użycie dysków
+df -h /                       - użycie dysku na dane systemu
