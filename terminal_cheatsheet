@@ -13,3 +13,4 @@ sudo apt install <nazwa apki> - instalacja aplikacji deb
   sudo apt install neofetch   - informacje o systemie
 
 nvidia-smi                    - użycie GPU (nvidia)
+df -h                         - użycie dysków
