@@ -20,3 +20,5 @@ eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'.*/XCom2-WarOf
 
 
 gamemoderun %command% --launcher-skip (WITCHER 3)
+
+PROTON_ENABLE_NVAPI=1 %command% --intro-skip -skipStartScreen --launcher-skip -dx12 (cyberpunk 2077 + proton 7.0.6)
