@@ -1,1 +1,2 @@
 sudo ubuntu-drivers autoinstall
+flatpak uninstall nvidia
