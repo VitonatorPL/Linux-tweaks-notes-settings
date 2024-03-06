@@ -31,3 +31,4 @@ PROTON_USE_WINED3D=1 %command% (sims4 for intel hd4600 laptop - lifebook e744, p
 
 
 DXVK_ASYNC=1 WINEDLLOVERRIDES="winmm=n,b" gamemoderun %command% -vulkan -nosplash -USEALLAVAILABLECORES  (satisfactory)
+PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 VKD3D_CONFIG=dxr WINEDLLOVERRIDES="winmm=n,b" gamemoderun %command% --launcher-skip (cyberpunk)
