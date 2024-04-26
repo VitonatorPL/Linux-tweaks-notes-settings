@@ -1,0 +1,5 @@
+https://www.nexusmods.com/fallout4/mods/395/
+
+The Fallout 4.ini and Fallout4Prefs.ini files must be found in the Documents folder/My Games/Fallout4 prefix
+ 1. This is what fixed it for me: Right below [Archive] on the Fallout.ini file insert this value: bInvalidateOlderFiles = 1
+ 2. Add "bEnableFileSelection=1" under [Launcher] inside Fallout4Prefs.ini
