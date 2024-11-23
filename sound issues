@@ -1,0 +1,34 @@
+PULSE_LATENCY_MSEC=60 %command%
+
+or
+
+STEP 1
+You need to navigate to a certain folder, if the command succeed, you're good and you can proceed to STEP 2, otherwise, refer to STEP 1.1
+
+Here's the command:
+cd /etc/pipewire
+
+STEP 1.1
+You don't have the folder, so here's the command to fix that:
+sudo mkdir pipewire
+
+STEP 2
+You're going to create the folder "pipewire.conf.d"
+sudo mkdir pipewire.conf.d
+
+Now you need to navigate into it:
+cd pipewire.conf.d
+
+STEP 3
+You need to create a file called "pipewire.conf".
+Here you can write the thing that will only change one parameter: the minimum quantum value!
+
+Be ready to copy-paste the long thing, but it'll be easy, don't worry.
+
+Let's create the file with the entire stuff in it!
+
+echo "context.properties = {default.clock.min-quantum = 1024}" | sudo tee pipewire.conf
+
+---------------------------------------------------------------------------------------
+
+If you followed everything correctly, just restart your computer and you'll be fine!
