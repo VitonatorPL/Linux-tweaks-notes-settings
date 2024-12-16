@@ -11,14 +11,14 @@ PROTON_NO_ESYNC=1 PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 gamemoderun %co
 CITIES SKYLINES (native) - __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia gamemoderun "./Cities.x64" gamemoderun %command%
 
 for desktop icon - gamemoderun __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia 
-
+//
 XCOM 2
 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia gamemoderun %command% -nostartupmovies
 
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'.*/XCom2-WarOfTheChosen\/Binaries\/Win64\/XCom2.exe'/" ) mangohud %command%
 eval $( echo "%command%" | sed "s/2KLauncher\/LauncherPatcher.exe'.*/XCom2-WarOfTheChosen\/Binaries\/Win64\/XCom2.exe'/" ) gamemoderun %command% -nostartupmovies
 
-
+//
 gamemoderun %command% --launcher-skip (WITCHER 3)
 
 PROTON_ENABLE_NVAPI=1 %command% --intro-skip -skipStartScreen --launcher-skip -dx12 (cyberpunk 2077 + proton 7.0.6)
@@ -36,3 +36,5 @@ PROTON_HIDE_NVIDIA_GPU=0 PROTON_ENABLE_NVAPI=1 VKD3D_CONFIG=dxr WINEDLLOVERRIDES
 
 regedit
 protontricks APPID regedit
+
+WINEDLLOVERRIDES="libglesv2.dll=d" %command% - fix for Uplay Connect
