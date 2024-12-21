@@ -5,6 +5,11 @@ Change file content - /home/vito/.steam/debian-installation/steamapps/common/Cry
 Language = "Polish"
 PAK = "Polish1.pak"
 
+OR
+
+The update moved some language related files.
+Fix: from Crysis\data folder take Default_en_US.lng file (or whatever language you have set), rename to Default.lng and copy to Crysis\Game\Localized folder.
+
 
 
 saves here
