@@ -1,2 +1,10 @@
 sudo ubuntu-drivers autoinstall
 flatpak uninstall nvidia
+
+
+sudo apt purge nvidia*
+sudo apt autoremove
+sudo apt autoclean
+
+ubuntu-drivers list
+sudo apt install nvidia-driver-570
