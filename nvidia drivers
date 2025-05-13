@@ -8,3 +8,57 @@ sudo apt autoclean
 
 ubuntu-drivers list
 sudo apt install nvidia-driver-570
+
+
+
+
+Switch script
+
+nano toggle-nvidia.sh
+chmod +x toggle-nvidia.sh
+
+
+sudo ./toggle-nvidia.sh 550
+# or
+sudo ./toggle-nvidia.sh 570
+
+
+Script below
+
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root (use sudo)"
+  exit
+fi
+
+if [ "$1" == "570" ]; then
+  echo "Switching to NVIDIA 570 driver..."
+  systemctl stop gdm3
+  apt purge -y 'nvidia-*'
+  apt autoremove -y --purge
+  rm -rf /lib/modules/$(uname -r)/kernel/drivers/video/nvidia*
+  rm -rf /etc/X11/xorg.conf /usr/share/X11/xorg.conf.d/10-nvidia.conf
+  apt update
+  apt install -y nvidia-driver-570
+  apt-mark unhold nvidia-driver-550-server
+  apt-mark hold nvidia-driver-570
+
+elif [ "$1" == "550" ]; then
+  echo "Switching to NVIDIA 550-server driver..."
+  systemctl stop gdm3
+  apt purge -y 'nvidia-*'
+  apt autoremove -y --purge
+  rm -rf /lib/modules/$(uname -r)/kernel/drivers/video/nvidia*
+  rm -rf /etc/X11/xorg.conf /usr/share/X11/xorg.conf.d/10-nvidia.conf
+  apt update
+  apt install -y nvidia-driver-550-server
+  apt-mark unhold nvidia-driver-570
+  apt-mark hold nvidia-driver-550-server
+
+else
+  echo "Usage: sudo ./toggle-nvidia.sh [550|570]"
+  exit 1
+fi
+
+echo "Done. Please reboot now."
